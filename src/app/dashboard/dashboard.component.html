@@ -1,0 +1,9 @@
+<h2>Top Flashcards</h2>
+<div class="flashcards-menu">
+  <a *ngFor="let flashcard of flashcards"
+    routerLink="/detail/{{flashcard.id}}">
+    {{flashcard.name}}
+  </a>
+</div>
+
+<app-flashcard-search></app-flashcard-search>

@@ -1,0 +1,13 @@
+<div id="search-component">
+    <label for="search-box">Flashcard Search</label>
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+  
+    <ul class="search-result">
+      <li *ngFor="let flashcard of flashcards$ | async" >
+        <a routerLink="/detail/{{flashcard.id}}">
+          {{flashcard.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+  

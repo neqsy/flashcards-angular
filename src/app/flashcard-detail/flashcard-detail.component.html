@@ -1,0 +1,15 @@
+<button type="button" (click)="goBack()">go back</button>
+<div *ngIf="flashcard">
+    <h2>{{flashcard.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{flashcard.id}}</div>
+    <div>
+      <label for="flashcard-name">Flashcard name: </label>
+      <input id="flashcard-name" [(ngModel)]="flashcard.name" placeholder="name">
+      <label for="flashcard-name">Flashcard translation: </label>
+      <input id="flashcard-name" [(ngModel)]="flashcard.translation" placeholder="translation">
+    </div>
+    <button type="button" (click)="goBack()">go back</button>
+    <button type="button" (click)="save()">save</button>
+  </div>
+ 
+

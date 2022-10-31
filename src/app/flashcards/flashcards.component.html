@@ -1,0 +1,27 @@
+<h2>My Flashcards</h2>
+<div>
+    <label for="new-flashcard">Flashcard name: </label>
+    <input id="new-flashcard" #flashcardName />
+    <label for="new-flashcard">Flashcard translation: </label>
+    <input id="new-flashcard" #flashcardTranslation />
+  
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button type="button" class="add-button" (click)="add(flashcardName.value, flashcardTranslation.value); flashcardName.value=''; flashcardTranslation.value=''">
+      Add flashcard
+    </button>
+  </div>
+<ul class="flashcards">
+  <li *ngFor="let flashcard of flashcards">
+    <a routerLink="/detail/{{flashcard.id}}">
+      <span class="badge">{{flashcard.id}}</span>
+      <span class="name">{{flashcard.name}}</span>
+      <span>--</span>
+      <span class="name">{{flashcard.translation}}</span>
+    </a>
+    <button type="button" class="delete" title="delete flashcard"
+  (click)="delete(flashcard)">x</button>
+  </li>
+</ul>
+
+
+
